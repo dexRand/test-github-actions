@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Copia repo nella macchina"
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
+   
       - name: "Saluto tutti"
         run: echo "Ciao"
       - name: "Stampo la directory"
