@@ -1,0 +1,25 @@
+name: "Deploy documentazione"
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+jobs:
+  deploy_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Copia repo nella macchina"
+        uses: actions/checkout@v4
+   
+      - name: "Installa Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x  
+        
+      - name: "Installa MkDocs"
+        run: pip install mkdocs-material
+        
+      - name: "Compile and Deploy on Pages"
+        run: mkdocs gh-deploy --force
