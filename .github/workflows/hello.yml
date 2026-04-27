@@ -1,0 +1,13 @@
+name: "primo workflow"
+on:
+	push:
+jobs:
+	saluta_e_controlla:
+		runs-on: ubuntu-latest
+		steps:
+		- name "Copia repo nella macchina"
+		  uses: actions/checkout@4
+		- name: "Saluto tutti"
+		  run: echo "Ciao"
+		- name: "Stampo la directory"
+		  run: ls -la
